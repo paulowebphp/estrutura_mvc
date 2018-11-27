@@ -17,26 +17,45 @@ class Core
 			# colocando as partes da url num array
 			$url = explode('/', $url);
 			
-			# Criando controller
 			# array_shift() remove primeiro item de um array
+			# ucfirst() coloca primeira letra em maiúsculas
 			array_shift($url);
-			$this->controller = $url[0];
-			
+
+			# Criando controller
+			$this->controller = ucfirst($url[0]) . "Controller.php";
+
+			array_shift($url);// tirando um elemento do array para passar para o Método
+
 			# Criando Metodo
-			array_shift($url);
-			$this->metodo = $url[0];
+			if( isset($url[0]) )
+			{
+
+				$this->metodo = $url[0];
+				array_shift($url);// tirando um elemento do array para passar para os Parâmetros
+
+			}#end if
 			
 			# Criando Parametros
-			array_shift($url);
-			# array_filter() pega só os valores VÁLIDOS de um array, ou seja, se tiver elementos vazios ele percebe automaticamente e forma um array com o que tiver no momento
-			$this->parametros = array_filter($url);
+			if( isset($url[0]) )
+			{
 
+				# array_filter() pega só os valores VÁLIDOS de um array, ou seja, se tiver elementos vazios ele percebe automaticamente e forma um array com o que tiver no momento
+				$this->parametros = array_filter($url);
 
+			}#end if
+			
 
 		}#end if
+		else
+		{
+			# tirando a barra do inicio da $_SERVER["REQUEST_URI"]
+			$this->controller = "IndexController.php";
+
+		}#end else
 		
 		//echo "<pre>";
 		//print_r($url);
+
 
 	}#END run
 
