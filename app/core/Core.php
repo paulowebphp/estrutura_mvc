@@ -8,7 +8,27 @@ class Core
 	private $parametros = array();
 
 
+	public function __construct()
+	{
+		$this->verificaUri();
+
+	}#END __construct()
+
+
+
 	public function run()
+	{
+
+		$controllerCorrente = $this->getController();
+
+		# instancia uma Classe com o mesmo nome que a string Controller que está getController utilizando o conceito de Função Variável $controllerCorrente(), onde os parenteses são opcionais
+		$instantiateVariableFunction = new $controllerCorrente;
+
+	}#END run
+
+
+
+	public function verificaUri()
 	{
 		$url = $_SERVER["REQUEST_URI"];
 
@@ -52,12 +72,8 @@ class Core
 			$this->controller = "IndexController.php";
 
 		}#end else
-		
-		//echo "<pre>";
-		//print_r($url);
 
-
-	}#END run
+	}#END verificaUri
 
 
 
