@@ -1,4 +1,8 @@
 <?php 
-echo date("Y-m-d");
+require 'app/core/Core.php';
+
+$core = new Core;
+$core->run();
+
 
  ?>
