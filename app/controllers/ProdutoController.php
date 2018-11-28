@@ -14,7 +14,7 @@ class ProdutoController
 
 	}#END index
 
-	public function lista($valor)
+	public function lista($valor = 10)
 	{
 		echo "Estou listando os produtos. Valor: R$ $valor";
 		echo "<br>";

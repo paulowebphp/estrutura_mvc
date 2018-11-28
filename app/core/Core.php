@@ -84,7 +84,20 @@ class Core
 
 	public function getController()
 	{
-		return "app\\controllers\\".$this->controller;
+
+		if( class_exists("app\\controllers\\".$this->controller) )
+		{
+
+			return "app\\controllers\\".$this->controller;
+
+		}#end if
+		else
+		{
+
+			return "app\\controllers\\IndexController";
+			
+		}#end else
+		
 
 	}#END getController
 
