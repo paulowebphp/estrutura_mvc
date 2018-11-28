@@ -18,8 +18,9 @@ class ClienteController extends Controller
 
 	public function ver()
 	{
-
-		$this->load("v_cliente");
+		$dados["nome"] = "Mjailton";
+		$dados["email"] = "mjailto@gmail.com";
+		$this->load("v_cliente", $dados);
 
 	}#END ver
 

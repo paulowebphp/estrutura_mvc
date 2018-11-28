@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>MJAILTON</h1>
-	<p>View Cliente</p>
+	<p>valores: <?php echo $nome ." - ". $email ?></p>
 </body>
 </html>
 
