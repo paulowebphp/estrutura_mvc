@@ -6,9 +6,9 @@ namespace app\controllers;
 class ProdutoController
 {
 
-	public function lista()
+	public function lista($valor)
 	{
-		echo "Estou listando os produtos";
+		echo "Estou listando os produtos. Valor: R$ $valor";
 		echo "<br>";
 
 

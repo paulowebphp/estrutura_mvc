@@ -23,7 +23,9 @@ class Core
 
 		# instancia uma Classe com o mesmo nome que a string Controller que está getController utilizando o conceito de Função Variável $controllerCorrente(), onde os parenteses são opcionais, como abaixo:
 		$c = new $controllerCorrente;
-		$c->lista();
+
+		# Utilizando a função call_user_func_array() que utiliza no primeiro parâmetro um callback (no caso o nosso objeto instanciado e seu método) e no segundo parametro os parâmetros desse callback. Desta forma ele consegue pegar a URL dinâmicamente
+		call_user_func_array(array($c, $this->getMetodo()),$this->getParametros());
 
 
 
