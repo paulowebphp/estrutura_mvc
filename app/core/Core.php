@@ -74,7 +74,7 @@ class Core
 		else
 		{
 			# tirando a barra do inicio da $_SERVER["REQUEST_URI"]
-			$this->controller = "IndexController.php";
+			$this->controller = "IndexController";
 
 		}#end else
 
@@ -92,7 +92,15 @@ class Core
 
 	public function getMetodo()
 	{
-		return $this->metodo;
+
+		if( method_exists("app\\controllers\\".$this->controller, $this->metodo) )
+		{
+
+			return $this->metodo;
+
+		}#end if
+
+		return "index";
 
 	}#END getMetodo
 

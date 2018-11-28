@@ -6,6 +6,7 @@ require 'vendor/autoload.php';
 $core = new Core;
 $core->run();
 
+/*
 echo "controller: ". $core->getController();
 echo "<br>";
 echo "metodo: ". $core->getMetodo();
@@ -16,6 +17,6 @@ foreach ($parametros as $param) {
 	echo "parametro: ".$param;
 	echo "<br>";
 }
-
+*/
 
  ?>
