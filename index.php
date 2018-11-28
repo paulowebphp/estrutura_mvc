@@ -1,5 +1,8 @@
 <?php 
+require 'app\controllers\ClienteController.php';
+require 'app\controllers\ProdutoController.php';
 require 'app/core/Core.php';
+
 
 $core = new Core;
 $core->run();

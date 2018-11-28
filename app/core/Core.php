@@ -21,8 +21,11 @@ class Core
 
 		$controllerCorrente = $this->getController();
 
-		# instancia uma Classe com o mesmo nome que a string Controller que está getController utilizando o conceito de Função Variável $controllerCorrente(), onde os parenteses são opcionais
-		$instantiateVariableFunction = new $controllerCorrente;
+		# instancia uma Classe com o mesmo nome que a string Controller que está getController utilizando o conceito de Função Variável $controllerCorrente(), onde os parenteses são opcionais, como abaixo:
+		$c = new $controllerCorrente;
+		$c->lista();
+
+
 
 	}#END run
 
@@ -42,7 +45,7 @@ class Core
 			array_shift($url);
 
 			# Criando controller
-			$this->controller = ucfirst($url[0]) . "Controller.php";
+			$this->controller = ucfirst($url[0]) . "Controller";
 
 			array_shift($url);// tirando um elemento do array para passar para o Método
 
@@ -79,7 +82,7 @@ class Core
 
 	public function getController()
 	{
-		return $this->controller;
+		return "app\\controllers\\".$this->controller;
 
 	}#END getController
 
