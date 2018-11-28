@@ -74,7 +74,7 @@ class Core
 		else
 		{
 			# tirando a barra do inicio da $_SERVER["REQUEST_URI"]
-			$this->controller = "IndexController";
+			$this->controller = ucfirst(CONTROLLER_PADRAO) . "Controller";;
 
 		}#end else
 
@@ -85,17 +85,17 @@ class Core
 	public function getController()
 	{
 
-		if( class_exists("app\\controllers\\".$this->controller) )
+		if( class_exists(NAMESPACE_CONTROLLER.$this->controller) )
 		{
 
-			return "app\\controllers\\".$this->controller;
+			return NAMESPACE_CONTROLLER.$this->controller;
 
 		}#end if
 		else
 		{
 
-			return "app\\controllers\\IndexController";
-			
+			return NAMESPACE_CONTROLLER.ucfirst(CONTROLLER_PADRAO) . "Controller";
+
 		}#end else
 		
 
@@ -106,14 +106,14 @@ class Core
 	public function getMetodo()
 	{
 
-		if( method_exists("app\\controllers\\".$this->controller, $this->metodo) )
+		if( method_exists(NAMESPACE_CONTROLLER.$this->controller, $this->metodo) )
 		{
 
 			return $this->metodo;
 
 		}#end if
 
-		return "index";
+		return METODO_PADRAO;
 
 	}#END getMetodo
 

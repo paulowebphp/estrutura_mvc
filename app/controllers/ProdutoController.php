@@ -14,6 +14,14 @@ class ProdutoController
 
 	}#END index
 
+	public function home()
+	{
+		echo "Metodo Home";
+		echo "<br>";
+
+
+	}#END home
+
 	public function lista($valor = 10)
 	{
 		echo "Estou listando os produtos. Valor: R$ $valor";
