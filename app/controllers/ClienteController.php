@@ -1,9 +1,9 @@
 <?php 
 
 namespace app\controllers;
+use app\core\Controller;
 
-
-class ClienteController
+class ClienteController extends Controller
 {
 
 	public function lista()
@@ -13,6 +13,15 @@ class ClienteController
 
 
 	}#END lista
+
+
+
+	public function ver()
+	{
+
+		$this->load("v_cliente");
+
+	}#END ver
 
 
 }#END ClienteController

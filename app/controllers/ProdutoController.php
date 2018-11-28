@@ -1,9 +1,9 @@
 <?php 
 
 namespace app\controllers;
+use app\core\Controller;
 
-
-class ProdutoController
+class ProdutoController extends Controller
 {
 
 	public function index()
@@ -14,13 +14,12 @@ class ProdutoController
 
 	}#END index
 
-	public function home()
+	public function ver()
 	{
-		echo "Metodo Home";
-		echo "<br>";
 
+		$this->load("v_produto");
 
-	}#END home
+	}#END ver
 
 	public function lista($valor = 10)
 	{
