@@ -5,13 +5,18 @@
 </head>
 <body>
 	<h1>MJAILTON</h1>
-	<p>valores: <?php echo $nome ." - ". $email ?></p>
+	
+	<!-- begin PHP -->
+	<?php 
+		foreach ($clientes as $cliente) 
+		{
+			# code...
+			echo $cliente["titulo"];
+			echo "<br>";
+		}#end foreach
+
+	 ?>
+	 <!-- end PHP -->
+
 </body>
 </html>
-
-<?php 
-
-echo "PHP";
-echo "<br>";
-
- ?>

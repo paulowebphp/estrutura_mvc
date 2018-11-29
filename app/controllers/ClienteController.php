@@ -2,16 +2,21 @@
 
 namespace app\controllers;
 use app\core\Controller;
+use app\models\M_Cliente;
 
 class ClienteController extends Controller
 {
 
 	public function lista()
 	{
-		echo "Estou listando os clientes";
-		echo "<br>";
+		
+		$clientes = new M_Cliente;
+		
+		$dados["clientes"] = $clientes->lista();
 
-
+		# Chamando a view
+		$this->load("v_cliente", $dados);
+		
 	}#END lista
 
 
